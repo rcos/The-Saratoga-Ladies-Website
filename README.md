@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="">
-    <img src="assets\images\Saratoga_Ladies_Logo.png" alt="Logo" width="160" height="160">
+    <img src="src\assets\images\Saratoga_Ladies_Logo.png" alt="Logo" >
   </a>
 
 </div>
