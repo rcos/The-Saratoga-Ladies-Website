@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="">
-    <img src="gatsby-wp\src\images\logo.png" alt="Logo" width="160" height="160">
+    <img src="assets\images\Saratoga_Ladies_Logo.png" alt="Logo" width="160" height="160">
   </a>
 
 </div>
