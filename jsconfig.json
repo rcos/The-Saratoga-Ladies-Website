@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/styles/*": ["./src/common/styles/*"],
+      "@/images/*": ["./src/assets/images/*"],
+      "@/text/*": ["./src/assets/text/*"],
+      "@/__Constants*": ["./src/__Constants.js"]
+    }
+  }
+}

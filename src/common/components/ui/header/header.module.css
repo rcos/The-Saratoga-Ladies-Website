@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.header_wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--primary-bg-color);
+}
+
+.header_wrapper svg {
+    position: fixed;
+    top: calc(var(--normal-header-height));
+    z-index: 9999999;
+    filter: drop-shadow(0px 4px 2px rgb(0 0 0 / 0.15));
+    width: 100%;
+    pointer-events: none;
+}
+
+.header_wrapper svg path {
+    fill: var(--primary-bg-color);
+    z-index: 99999;
+}
+
+.dropdown {
+    position: relative;
+    display: inline;
+    min-width: 17%;
+    max-width: 17%;
+    z-index: 100000;
+    cursor: pointer;
+}
+
+
+.dropdown_btn {
+    background-color: rgba(0,0,0,0);
+    color: #333; /*var(--saratoga-red);*/
+    padding: 5px 0px;
+    font-size: var(--saratoga-medium-text);
+    border: none;
+    position: relative;
+    text-align: center;
+    align-items: end;
+    z-index: inherit;
+    cursor: pointer;
+    /*cursor: pointer;*/
+}
+
+.dropdown_btn:hover {
+    color: var(--saratoga-red);
+}
+
+/*
+.dropdown:hover , .dropdown_btn {
+    display: block;
+}
+
+.dropdown:hover .dropdown_btn  {
+    background-color: white;
+}*/
+
+.dropdown_content {
+    display: block;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    z-index: 100000;
+    box-shadow: 0px 20px 15px 1px rgb(0 0 0 / 20%);
+    text-align: center;
+    cursor: pointer;
+}
+
+.item {
+    color:black;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 5% 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.dropdown_content .item:hover {
+        background-color: #ddd;
+    }
+
+
+
+@media screen and (max-width: 1000px) {
+    .dropdown  {
+      display: none !important;
+    }
+} 
+
+
+
+
+/*
+    &:hover ${DropdownContent} {
+        display: block;
+    }
+
+    &:hover ${DropBtn} {
+        background-color: white;
+    }
+
+    @media screen and (max-width: 1000px) {
+        & {
+          display: none !important;
+        }
+    } 
+*/
+
+/*
+---------------------------------------------------------------------
+*/
+
+
+.container1,
+.container2,
+.container3{
+    display: flex;
+    max-width: 20%;
+    min-width: 20%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: inherit;
+    /*z-index: 100000;*/
+}
+
+.dropbtn {
+    background-color: var(--saratoga-red);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    text-align: center;
+    align-items: flex-end;
+    z-index: inherit;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    min-width: 17%;
+    max-width: 17%;
+    z-index: 100000;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 99;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.item {
+    color:black;
+    background-color: inherit;
+    display: block;
+    height: 100%;
+    padding: 5%;
+}
+
+.dropdown-content .item:hover { background-color: #ddd; }
+
+.dropdown:hover .dropdown-content { display: block; }
+
+.dropdown:hover .dropbtn { 
+    background: transparent;
+ }
+
+.imageContainer{
+    display: flex;
+    max-width: 22.5%;
+    min-width: 22.5%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: inherit;
+    align-items: flex-end;
+    z-index: 100000;
+    font-family: 'Great Vibes', cursive;
+    margin-top: 70px;
+    font-size: 40px !important;
+    color: var(--saratoga-red);
+    padding-right: 20px;
+}
+
+
+/* .imageContainer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px;
+}
+
+.imageContainer img { /* CANNOT FIGURE OUT WIDTH > PARENT DIV | FIX SCALING WITH DIFFERENT SCREENS
+    position: absolute;
+    width: 150%;
+    height: 70px;
+    top: 50%;
+    left: 0;
+    right: 0;
+} */
+
+
+
+.logo_wrapper {
+    display: flex;
+    max-width: 32%;
+    min-width: 32%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0);
+    align-items: flex-end;
+    position: relative;
+    z-index: 99999999;
+    font-family: 'Great Vibes', cursive !important;
+    margin-top: 4.5vw;
+    margin-left: 0px;
+    font-size: 3.00vw !important;
+    color: var(--saratoga-red);
+    /*padding-right: 10px;*/
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.logo_wrapper   img {
+        margin: 0 !important;
+        width: 70% !important;
+        min-width: 300px;
+        height: auto;
+    }
+
+    /* @media screen and (min-width: 1400px) {
+        & {
+            font-size: 35px !important;
+            margin-top: 50px;
+        }
+    }
+    
+    /* IPad Air as reference */
+    @media screen and (max-width: 1000px) {
+        .logo_wrapper   {
+            margin-top: 30px !important;
+            font-size: 40px !important;
+        }
+    }

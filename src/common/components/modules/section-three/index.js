@@ -1,0 +1,1 @@
+export { default as SectionThree } from "./section.component.jsx"; 
