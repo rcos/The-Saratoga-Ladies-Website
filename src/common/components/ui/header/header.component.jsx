@@ -22,7 +22,7 @@ function MappedDropDown(props){
                     <div className={styles.dropdown_content} style={{paddingTop: props.dropPad }} 
                          onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
                         { HeaderData[props.index].map((item) => {
-                            return   ( <div className={styles.item} onClick={() => {alert("Functionality coming soon :)")}}>{item.title}</div> )
+                            return   ( <div key={item.title} className={styles.item} onClick={() => {alert("Functionality coming soon :)")}}>{item.title}</div> )
                         })} 
                     </div>  : <></> 
                 }
