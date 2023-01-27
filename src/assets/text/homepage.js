@@ -42,6 +42,8 @@ export const FooterSectionOneParagraph = "The Saratoga Ladies was created to hon
 export const FooterSectionTwoHeader = "Join Us Today"
 export const FooterSectionTwoParagraph = "To receive an application, simply press the button below! We will contact you and forward an application via email attachment or mail a hard copy to your address. The application provides guidance on submitting your completed document. Upon receipt, we will contact you for an interview."
 export const FooterSectionTwoButton = "Join Today!"
+export const FooterSectionEmailButton = "Email Us"
+export const FooterSectionFormButton = "Download Form"
 
 /*----------------------------------------------------------------*/
 /*                      Section 3 of Footer                       */

@@ -1,9 +1,9 @@
 import styles from './footer.module.css'
-import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaGithub } from 'react-icons/fa'
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaGithub , FaDownload} from 'react-icons/fa'
 import {FooterSectionOneHeader, FooterSectionOneParagraph, FooterSectionTwoHeader, FooterSectionTwoParagraph, FooterSectionTwoButton, 
-    FooterSectionThreeHeader, FooterSectionFourItem1, FooterSectionFourItem2, FooterSectionFourItem3} from '@/text/homepage'
-
-import Button from '../button.jsx'
+    FooterSectionThreeHeader, FooterSectionFourItem1, FooterSectionFourItem2, FooterSectionFourItem3, FooterSectionFormButton, FooterSectionEmailButton
+  } from '@/text/homepage'
+  import Button from '../button.jsx'
 
 
 
@@ -25,7 +25,12 @@ export default function Footer(props) {
                 <div className={styles['second-column'] + ' ' + styles['footer-content-section'] }> 
                     <h4>{FooterSectionTwoHeader}</h4>
                     <p>{FooterSectionTwoParagraph}</p>
-                    <Button>{FooterSectionTwoButton}</Button> 
+                    <div className={styles['button-div']}>
+                    <button className={styles['form-button']}><a href="https://cdn.discordapp.com/attachments/1067781290830594118/1067786175944859658/TSL_APPLICATION_26_Oct_22.pdf" download="TSL">
+
+                     <FaDownload size={'1.25em'} color={'black'}></FaDownload></a></button>
+                    <button className={styles['email-button']}><a href="mailto:example.email@your-domain.com"> Email us</a></button>
+                    </div>
                 </div> 
             </div>
             <div className={styles['footer-bot-section'] }>
