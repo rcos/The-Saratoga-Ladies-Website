@@ -1,6 +1,7 @@
 
 import styles from './header.module.css'
 import React, { useState } from "react"
+import { CgMenu } from 'react-icons/cg';
 
 import Image from 'next/image'
 import LOGO from "@/images/Saratoga_Ladies_Logo.png";
@@ -30,9 +31,20 @@ function MappedDropDown(props){
     )
 }
 
+function SandwichDropDown(props){
+    let _Arrow = (HeaderData[props.index].length > 0 ? <>&#9660;</> : <></>)
+    const [isShown, setIsShown] = useState(false);
+
+    return (<div className={styles.sandwich_dropdown}>
+            <div className={styles.sw_dropbtn}/>
+        </div>
+    )
+}
+
 function HeaderContent(props){
 
     return (
+        <React.Fragment>
             <div className={styles.header_wrapper}>
                 <MappedDropDown mrgnTop="0.5vw" hero="Our Mission" dropPad="35px" index="0"/>
                 <MappedDropDown mrgnTop="2.5vw" hero="What We Do" dropPad="45px" index="1"/>
@@ -43,9 +55,19 @@ function HeaderContent(props){
 
                 <MappedDropDown mrgnTop="2.5vw" hero="Learn More" dropPad="45px" index="2"/>
                 <MappedDropDown mrgnTop="0.5vw" hero="Contact Us" dropPad="35px" index="3"/>
+                
+
+
+                <div className={styles.sandwich_wrapper}>
+                    <CgMenu size={'7.5vw'}/>
+                </div>
 
                 <svg viewBox="0 0 40 2" fill="#fff"><path d={`M0 0 Q 20 2.75, 40 0`} /></svg>
             </div>
+            <div className={styles.sandwich_dropdown}>
+                <div className={styles.sw_dropbtn}/>
+            </div>
+        </React.Fragment>
     )
 }
 

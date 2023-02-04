@@ -257,11 +257,65 @@
             margin-top: 50px;
         }
     }
+    */
+
+/* ==================== SANDWICH WRAPPER ====================  */
+
+.sandwich_wrapper {
+    display: none;
+    position: absolute;
+    width: 10vw;
+}
     
-    /* IPad Air as reference */
-    @media screen and (max-width: 1000px) {
-        .logo_wrapper   {
-            margin-top: 30px !important;
-            font-size: 40px !important;
-        }
+.sandwich_dropdown {
+    position: fixed;
+    background-color: rgba(255, 0, 0, 0.359);
+    display: none;
+    height: 100% !important;
+    width: 100%;
+    z-index: 100000;
+}
+
+.sw_dropbtn {
+    background-color: rgba(0,0,0,0);
+    color: #333; /*var(--saratoga-red);*/
+    padding: 5px 0px;
+    font-size: var(--saratoga-medium-text);
+    border: none;
+    position: relative;
+    text-align: center;
+    align-items: end;
+    z-index: inherit;
+    cursor: pointer;
+}
+
+/* IPad Air as reference */
+@media screen and (max-width: 1000px) {
+    .logo_wrapper   {
+        margin-top: 10px !important;
+        font-size: 40px !important;
     }
+
+    .logo_wrapper img {
+        margin: -1.2vw !important;
+    }
+
+    .sandwich_wrapper {
+        display: block;
+    }
+
+    .sandwich_wrapper svg {
+        top: 10px;
+        width: 10%;
+        left: 88vw;
+    }
+
+    .sandwich_dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sandwich_dropdown .sw_dropbtn {
+        display: block;
+    }
+}
