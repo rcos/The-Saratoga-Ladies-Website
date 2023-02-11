@@ -25,11 +25,15 @@ export default function Footer(props) {
                 <div className={styles['second-column'] + ' ' + styles['footer-content-section'] }> 
                     <h4>{FooterSectionTwoHeader}</h4>
                     <p>{FooterSectionTwoParagraph}</p>
-                    <div className={styles['button-div']}>
-                    <button className={styles['form-button']}><a href="https://cdn.discordapp.com/attachments/1067781290830594118/1067786175944859658/TSL_APPLICATION_26_Oct_22.pdf" download="TSL">
 
-                     <FaDownload size={'1.25em'} color={'black'}></FaDownload></a></button>
-                    <button className={styles['email-button']}><a href="mailto:example.email@your-domain.com"> Email us</a></button>
+                    <div className={styles['footer-section-button-wrapper']}>
+                      <div className={styles['button-div-download']}>
+                      <Button icon={FaDownload} type={"download"} shape={'circle'}/>
+                      </div>
+                    <div className={styles['button-div-email']}>
+                      <Button type={"email"} text={"Email us"} />
+      
+                    </div>
                     </div>
                 </div> 
             </div>

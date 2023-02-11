@@ -16,7 +16,7 @@ const SectionThree = (props) => {
                 <MultiHeader subText={SectionThreeSubHeader} >{ SectionThreeHeader }</MultiHeader> 
                 <p>{SectionThreeParagraph1}</p>
                 <p>{SectionThreeParagraph2}</p>
-                <Button>{'Learn More'}</Button>
+                <Button text={'Learn More'}></Button>
             </div>
             <div className={styles['section-second-container']  + ' saratoga-half-container'}>
 

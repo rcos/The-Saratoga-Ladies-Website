@@ -10,6 +10,7 @@ import { SectionOne } from "../common/components/modules/section-one/index.js"
 import { SectionTwo } from "../common/components/modules/section-two/index.js"
 import { SectionThree } from "../common/components/modules/section-three/index.js"
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
           <SectionOne />
           <SectionTwo />
           <SectionThree />
-          <Footer />
+          <Footer></Footer>
         </div>
        
       </main>
