@@ -34,7 +34,7 @@ const Button = (props) => {
             return (
                 <div className={styles['saratoga-button-wrapper'] }>
                         <button style={buttonStyles}>
-                            <a className={styles['link-style-rectangle']} href="https://cdn.discordapp.com/attachments/1067781290830594118/1067786175944859658/TSL_APPLICATION_26_Oct_22.pdf"></a>
+                            <a className={styles['link-style-circle']} href="https://cdn.discordapp.com/attachments/1067781290830594118/1067786175944859658/TSL_APPLICATION_26_Oct_22.pdf"></a>
                             { props.icon ? <props.icon size={"1.7rem"} /> : <></> }
                         </button>
                 </div>
