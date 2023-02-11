@@ -35,9 +35,19 @@ function SandwichDropDown(props){
     let _Arrow = (HeaderData[props.index].length > 0 ? <>&#9660;</> : <></>)
     const [isShown, setIsShown] = useState(false);
 
-    return (<div className={styles.sandwich_dropdown}>
-            <div className={styles.sw_dropbtn}/>
-        </div>
+    return (<div className={styles.sw_dropbtn} 
+                onClick={() => {alert("Functionality coming soon :)")}} 
+                onMouseEnter={() => setIsShown(true)}
+                onMouseLeave={() => setIsShown(false)}>
+                    { props.hero } { _Arrow }
+            { isShown && HeaderData[props.index].length > 0 ? 
+                <div onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
+                   { HeaderData[props.index].map((item) => {
+                            return   ( <div key={item.title} className={styles.item} onClick={() => {alert("Functionality coming soon :)")}}>{item.title}</div> )
+                    })}  
+                </div> : <></>
+            }
+            </div>
     )
 }
 
@@ -64,8 +74,12 @@ function HeaderContent(props){
 
                 <svg viewBox="0 0 40 2" fill="#fff"><path d={`M0 0 Q 20 2.75, 40 0`} /></svg>
             </div>
+
             <div className={styles.sandwich_dropdown}>
-                <div className={styles.sw_dropbtn}/>
+                <SandwichDropDown hero="Our Mission" index="0"/>
+                <SandwichDropDown hero="What We Do" index="1"/>
+                <SandwichDropDown hero="Learn More" index="2"/>
+                <SandwichDropDown hero="Contact Us" index="3"/>
             </div>
         </React.Fragment>
     )
