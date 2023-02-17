@@ -266,7 +266,7 @@
     position: absolute;
     top: 52.85%;
     z-index: inherit;
-    
+    margin-top: calc(2*(0.5vw) + 1.5vw);
 }
 
 .sw_dropbtn {
