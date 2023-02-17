@@ -134,10 +134,9 @@
 .footer-section-button-wrapper {
     display: flex;
     flex-flow: row;
-
     gap: 10px;
-    justify-content: flex-start;
-    height: auto;
+    justify-content: center;
+
 }
 
 .footer-section-icon-wrapper {
@@ -174,14 +173,15 @@
     display: flex;
     flex-flow: row;
     height: 100%;
-    width: 33.3333%;
+    width: 10%;
+    
 }
 
 .button-div-email {
     display: flex;
     flex-flow: row;
-    height: 50px;
-    width: 66.6666%;
+    height: 100%;
+    width: 90%;
 }
 
 

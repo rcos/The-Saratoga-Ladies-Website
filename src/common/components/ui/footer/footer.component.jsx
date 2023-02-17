@@ -28,12 +28,11 @@ export default function Footer(props) {
 
                     <div className={styles['footer-section-button-wrapper']}>
                       <div className={styles['button-div-download']}>
-                      <Button icon={FaDownload} type={"download"} shape={'circle'}/>
+                        <Button icon={FaDownload} type={"download"} shape={'circle'}/>
                       </div>
-                    <div className={styles['button-div-email']}>
-                      <Button type={"email"} text={"Email us"} />
-      
-                    </div>
+                      <div className={styles['button-div-email']}>
+                        <Button type={"email"} text={"Email us"} shape={'retangle'}/>
+                      </div>
                     </div>
                 </div> 
             </div>
