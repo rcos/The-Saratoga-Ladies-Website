@@ -237,35 +237,75 @@
 
 /* ==================== SANDWICH WRAPPER ====================  */
 
-.sandwich_wrapper {
+.sandwich_icon_wrapper {
     display: none;
     position: absolute;
     width: 10vw;
 }
     
-.sandwich_dropdown {
+.sandwich_dropdown_wrapper {
     position: fixed;
     background-color: var(--saratoga-red);
     display: none;
-    height: 100% !important;
     width: 100%;
+    height: 195%;
     z-index: 1;
-    top: 71px;
+}
+
+.sandwich_dropdown {
+    display: none;
+    background-color: white;
+    width: 100%;
+    margin-top: 0%;
+    height: auto;
+    position: absolute;
+    top: 52.85%;
+    z-index: inherit;
+    
 }
 
 .sw_dropbtn {
-    display: flex;
-    font-size: 200%;
-    color: white !important;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 23%;
-    position: relative;
-    top: 32px;
-    color:black;
+    background-color: white;
+    font-size: xx-large;
     text-align: center;
+    justify-content: center;
+    align-self: center;
+    color: blue;
     cursor: pointer;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.811);
+    margin: 0.5px;
+}
+
+.sw_item_container {
+    display: none;
+    position: relative;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.sw_item {
+    background-color: white;
+    font-size: xx-large;
+    text-align: center;
+    width: 100%;
+    align-self: center;
+    color: black;
+    cursor: pointer;
+    height: auto;
+}
+
+.sw_dropbtn:hover {
+    background-color: var(--saratoga-red);
+}
+
+.sw_dropbtn:hover .sw_item_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sw_item:hover{
+    background-color: #ddd;
 }
 
 /* IPad Air as reference */
@@ -279,18 +319,23 @@
         margin: -1.2vw !important;
     }
 
-    .sandwich_wrapper {
+    .sandwich_icon_wrapper {
         display: block;
     }
 
-    .sandwich_wrapper svg {
+    .sandwich_icon_wrapper svg {
         top: 0px;
         width: 10%;
         left: 88vw;
     }
 
-    .sandwich_dropdown {
+    .sandwich_dropdown_wrapper {
         display: block;
+    }
+
+    .sandwich_dropdown {
+        display: flex;
+        flex-direction: column;
     }
 
     .dropdown-content {

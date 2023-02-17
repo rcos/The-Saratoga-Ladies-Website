@@ -35,19 +35,22 @@ function SandwichDropDown(props){
     let _Arrow = (HeaderData[props.index].length > 0 ? <>&#9660;</> : <></>)
     const [isShown, setIsShown] = useState(false);
 
-    return (<div className={styles.sw_dropbtn} 
-                onClick={() => {alert("Functionality coming soon :)")}} 
-                onMouseEnter={() => setIsShown(true)}
-                onMouseLeave={() => setIsShown(false)}>
-                    { props.hero } { _Arrow }
-            { isShown && HeaderData[props.index].length > 0 ? 
-                <div onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
-                   { HeaderData[props.index].map((item) => {
-                            return   ( <div key={item.title} className={styles.item} onClick={() => {alert("Functionality coming soon :)")}}>{item.title}</div> )
-                    })}  
-                </div> : <></>
-            }
+    return (
+        <div className={styles.sw_dropbtn}>
+            { /* Outer button hero */}
+            { props.hero } { _Arrow }
+
+            { /* Flexbox that appears under outer button with mapped elements
+                 taken from HeaderData.
+                 Appears only on hover of outer button. */}
+            <div className={styles.sw_item_container}>
+                { HeaderData[props.index].map((item) => {
+                            return   ( <div key={item.title} className={styles.sw_item} onClick={() => {alert("Functionality coming soon :)")}}>{item.title}</div> )
+                })} 
             </div>
+
+        </div>
+        
     )
 }
 
@@ -68,18 +71,20 @@ function HeaderContent(props){
                 
 
 
-                <div className={styles.sandwich_wrapper}>
+                <div className={styles.sandwich_icon_wrapper}>
                     <CgMenu size={'7.5vw'}/>
                 </div>
 
                 <svg viewBox="0 0 40 2" fill="#fff"><path d={`M0 0 Q 20 2.75, 40 0`} /></svg>
             </div>
 
-            <div className={styles.sandwich_dropdown}>
-                <SandwichDropDown hero="Our Mission" index="0"/>
-                <SandwichDropDown hero="What We Do" index="1"/>
-                <SandwichDropDown hero="Learn More" index="2"/>
-                <SandwichDropDown hero="Contact Us" index="3"/>
+            <div className={styles.sandwich_dropdown_wrapper}>
+                <div className={styles.sandwich_dropdown}>
+                    <SandwichDropDown hero="Our Mission" index="0"/>
+                    <SandwichDropDown hero="What We Do" index="1"/>
+                    <SandwichDropDown hero="Learn More" index="2"/>
+                    <SandwichDropDown hero="Contact Us" index="3"/>
+                </div>
             </div>
         </React.Fragment>
     )
