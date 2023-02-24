@@ -171,7 +171,6 @@
 
 .button-div-download {
     display: flex;
-    flex-flow: row;
     height: 100%;
     width: 10%;
     
@@ -179,7 +178,6 @@
 
 .button-div-email {
     display: flex;
-    flex-flow: row;
     height: 100%;
     width: 90%;
 }
