@@ -3,6 +3,12 @@
   width: 100%;
 }
 
+.fullWidthImage {
+  width: 100%;
+  height: 150px;
+  background-color: red;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
