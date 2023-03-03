@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+import { client } from 'lib/apollo.js'
+import { gql } from '@apollo/client'
 
 import { Header } from "../common/components/ui/header/header.js"
 import { Hero } from "../common/components/ui/hero/index.js"
@@ -35,3 +37,28 @@ export default function Home() {
     </>
   )
 }
+
+/* export async function getStaticProps(){
+
+  const GET_POSTS = gql`
+    query GetAllPosts {
+      posts {
+        nodes {
+          title
+          uri
+          content
+          date
+        }
+      }
+    }
+  `
+  const response = await client.query({
+    query: GET_POSTS
+  })
+  const posts = response?.data?.posts?.nodes
+  return {
+    props: {
+      posts
+    }
+  }
+} */
