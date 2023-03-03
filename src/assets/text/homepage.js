@@ -55,7 +55,7 @@ export const FooterSectionThreeHeader = "Navigation"
 /*----------------------------------------------------------------*/
 export const FooterSectionFourItem1 = "info@yourdomain.org "
 export const FooterSectionFourItem2 = "518.581.9128 ext. 209"
-export const FooterSectionFourItem3 = "© 2022 Saratoga Ladies"
+export const FooterSectionFourItem3 = "© 2023 Saratoga Ladies"
 
 
 export const MissionStatement = "The Saratoga Ladies was created to honor our fallen Veterans and offer condolences to their families during interment services at the Gerald B. H. Solomon Saratoga National Cemetery. We will stand as a silent witness during Military Funeral Honors and offer condolences through words and final tributes to the Veteran's Family. We wil attend every interment service of our fallen veterans regardless of day time or weather."
