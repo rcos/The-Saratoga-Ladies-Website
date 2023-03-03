@@ -1,7 +1,7 @@
 import styles from './footer.module.css'
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaGithub , FaDownload} from 'react-icons/fa'
 import {FooterSectionOneHeader, FooterSectionOneParagraph, FooterSectionTwoHeader, FooterSectionTwoParagraph, FooterSectionTwoButton, 
-    FooterSectionThreeHeader, FooterSectionFourItem1, FooterSectionFourItem2, FooterSectionFourItem3, FooterSectionFormButton, FooterSectionEmailButton
+    FooterSectionThreeHeader, FooterSectionFourItem1, FooterSectionFourItem2, FooterSectionFourItem3
   } from '@/text/homepage'
   import Button from '../button.jsx'
 

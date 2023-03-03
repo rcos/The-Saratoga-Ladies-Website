@@ -18,7 +18,7 @@ export default function SlugPage({ post }) {
                 <h className={styles.bannerTitle}>Title</h>
             </div>
             <h1>{post.title}</h1>
-            <div dangerouslySetInnerHTML={{__html: post.content}}></div>
+            <div dangerouslySetInnerHTML={{__html: post.content}} className={styles.websiteContent}></div>
             <Footer />
         </div>
         </div>
@@ -33,6 +33,7 @@ export async function getStaticProps({ params }){
         query GetPostByURI($id: ID!) {
             post(id: $id, idType: URI) {
             title
+            content
             content
             date
             uri
