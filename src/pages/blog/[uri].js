@@ -1,13 +1,20 @@
 import { client } from 'lib/apollo'
 import { gql } from "@apollo/client"
 import styles from '@/styles/Home.module.css'
-import { Header } from "../common/components/ui/header/header.js"
-import { Footer } from "../common/components/ui/footer/footer.js"
+import { Header } from "../../common/components/ui/header/header.js"
+import { Footer } from "../../common/components/ui/footer/footer.js"
 
 import Image from 'next/image'
 import IMG0 from '@/images/Hero_First_New.jpg'
+import {useRouter} from 'next/router'
 
 export default function SlugPage({ post }) {
+    const router = useRouter();
+
+    if (router.isFallback){
+        return <div>Loading...</div>
+    }
+
     return (
         <main className={styles.main}>
         <div className="page-wrapper">
@@ -17,7 +24,7 @@ export default function SlugPage({ post }) {
                 <Image src={IMG0} className={styles.bannerImage}></Image>
                 <h className={styles.bannerTitle}>Title</h>
             </div>
-            <h1>{post.title}</h1>
+           
             <div dangerouslySetInnerHTML={{__html: post.content}} className={styles.websiteContent}></div>
             <Footer />
         </div>
@@ -28,11 +35,12 @@ export default function SlugPage({ post }) {
     )
 }
 
+
 export async function getStaticProps({ params }){
+
     const GETPOSTBYURI = gql`
         query GetPostByURI($id: ID!) {
             post(id: $id, idType: URI) {
-            title
             content
             content
             date
@@ -51,14 +59,24 @@ export async function getStaticProps({ params }){
         variables: {
             id: params.uri
         }
+        
     })
 
+
     const post = response?.data?.post
+    
+    if (!post) {
+        return {
+            notFound: true,
+        }
+    }
+
     return {
         props: {
             post
         }
     }
+    
 }
 
 export async function getStaticPaths(){

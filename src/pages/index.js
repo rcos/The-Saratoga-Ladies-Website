@@ -15,7 +15,7 @@ import { SectionThree } from "../common/components/modules/section-three/index.j
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home(error) {
   return (
     <> 
       <Head>
@@ -40,7 +40,6 @@ export default function Home() {
 }
 
 export async function getStaticProps() {
-
   const GET_POSTS = gql`
       query GetAllPosts {
         posts {
@@ -55,12 +54,12 @@ export async function getStaticProps() {
   `
 
   const response = await client.query({
-    query: GET_POSTS
-  })
+      query: GET_POSTS
+    })
   const posts = response?.data?.posts?.nodes
-  return {
-    props: {
-      posts
+    return {
+      props: {
+        posts
     }
   }
 }
