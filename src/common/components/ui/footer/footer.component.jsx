@@ -1,9 +1,9 @@
 import styles from './footer.module.css'
-import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaGithub } from 'react-icons/fa'
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaGithub , FaDownload} from 'react-icons/fa'
 import {FooterSectionOneHeader, FooterSectionOneParagraph, FooterSectionTwoHeader, FooterSectionTwoParagraph, FooterSectionTwoButton, 
-    FooterSectionThreeHeader, FooterSectionFourItem1, FooterSectionFourItem2, FooterSectionFourItem3} from '@/text/homepage'
-
-import Button from '../button.jsx'
+    FooterSectionThreeHeader, FooterSectionFourItem1, FooterSectionFourItem2, FooterSectionFourItem3
+  } from '@/text/homepage'
+  import Button from '../button.jsx'
 
 
 
@@ -25,7 +25,15 @@ export default function Footer(props) {
                 <div className={styles['second-column'] + ' ' + styles['footer-content-section'] }> 
                     <h4>{FooterSectionTwoHeader}</h4>
                     <p>{FooterSectionTwoParagraph}</p>
-                    <Button>{FooterSectionTwoButton}</Button> 
+
+                    <div className={styles['footer-section-button-wrapper']}>
+                      <div className={styles['button-div-download']}>
+                        <Button icon={FaDownload} type={"download"} shape={'circle'}/>
+                      </div>
+                      <div className={styles['button-div-email']}>
+                        <Button type={"email"} text={"Email us"} shape={'retangle'}/>
+                      </div>
+                    </div>
                 </div> 
             </div>
             <div className={styles['footer-bot-section'] }>
