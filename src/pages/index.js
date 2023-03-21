@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
+import { getAllPosts } from 'lib/test-data.js'
 import styles from '@/styles/Home.module.css'
+import { client } from "/lib/apollo"
+import { gql } from "@apollo/client"
 
 import { Header } from "../common/components/ui/header/header.js"
 import { Hero } from "../common/components/ui/hero/index.js"
@@ -12,7 +15,7 @@ import { SectionThree } from "../common/components/modules/section-three/index.j
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home(error) {
   return (
     <> 
       <Head>
@@ -28,10 +31,35 @@ export default function Home() {
           <SectionOne />
           <SectionTwo />
           <SectionThree />
-          <Footer />
+          <Footer></Footer>
         </div>
        
       </main>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const GET_POSTS = gql`
+      query GetAllPosts {
+        posts {
+          nodes {
+            title
+            content
+            uri
+            date
+          }
+        }
+      }  
+  `
+
+  const response = await client.query({
+      query: GET_POSTS
+    })
+  const posts = response?.data?.posts?.nodes
+    return {
+      props: {
+        posts
+    }
+  }
 }
