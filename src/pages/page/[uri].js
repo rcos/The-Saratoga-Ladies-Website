@@ -1,12 +1,11 @@
 import { client } from 'lib/apollo';
 import { gql } from '@apollo/client';
 
-import { Header } from "../common/components/ui/header/header.js"
-import { Footer } from "../common/components/ui/footer/footer.js"
+import { Header } from "../../common/components/ui/header/header.js"
+import { Footer } from "../../common/components/ui/footer/footer.js"
 
 export default function SlugPage({ post }) {
-
-  return (
+    return (
     <>
         <Header/>
         <div style={{margin: "25%", textAlign: "center"}}>
@@ -14,7 +13,7 @@ export default function SlugPage({ post }) {
         </div>
         <Footer/>
     </>
-  )
+    )
 }
 
 
@@ -43,6 +42,12 @@ export async function getStaticProps({ params }){
         }
     })
     const post = response?.data?.post
+    if (!post) {
+        return {
+            notFound: true,
+        }
+    }
+
     return {
         props: {
             post
