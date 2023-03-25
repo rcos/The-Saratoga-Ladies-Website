@@ -8,11 +8,17 @@ import { GiStarsStack } from 'react-icons/gi'
 
 import Image from 'next/image'
 import IMG0 from '@/images/Hero_First_New.jpg'
+import IMG1 from '@/images/ArticlePlaceholder.jpg'
+
 
 
 //import ReactCurvedText from "react-curved-text";
 
-const ImagesArray = [ { image: IMG0, } ]
+const ImagesArray =
+  [
+    {image: IMG1}, 
+    {image: IMG0},
+  ];
 
 class HeroSection extends React.Component {
     constructor() {
@@ -50,13 +56,13 @@ class HeroSection extends React.Component {
     }
 
     render() {
+      
       return (
         <React.Fragment>
-          <div className="banner-wrapper flex flow-col center filler-height-500 bg-blue">
+          <div className="banner-wrapper fleex flow-col center filler-height-500 bg-blue">
             <Image src={this.state.BannerSlides[this.state.currIndex].image} />
             <div className="ribbon-wrapper">
               <div className="ribbon">
-               
                 <svg viewBox="0 0 40 2"><path d="M0 0 Q 20 2.75, 40 0" /></svg>
                 <div className="ribbon-content">
                   <GiStarsStack  fontSize="2.0em" />
@@ -69,8 +75,9 @@ class HeroSection extends React.Component {
               </div>
             </div>
             <svg viewBox="0 0 40 2" fill="#fff" style={{width: 'fit-content'}}><path d={`M0 0 Q 20 2.75, 40 0`} /></svg>
-            <div className="banner-filler"/>
-          </div>        
+            <div className="banner-filler"/>    
+          </div> 
+          <button onClick={this.incrementIndex}> Next </button>         
         </React.Fragment>
       )
     }
