@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 
+
 import { GiStarsStack } from 'react-icons/gi'
 
 //import { HeaderRibbonText } from '../../../assets/text/HomeText'
@@ -16,37 +17,28 @@ const ImagesArray =
 
 const HeroSection = () => {
   const [currIndex,setCurrIndex] = useState(0);
+ 
 
-  /*
-  const incrementIndex = () => {
-    if (currIndex + 1 <= ImagesArray.length -1){
-      setCurrIndex(currIndex + 1)
-    }
-    else setCurrIndex(0);
-  }
-
-  const decrementIndex = () => {
-    if (currIndex - 1 >= 0){
-      setCurrIndex(currIndex -1)
-    }
-    else setCurrIndex(ImagesArray.length - 1)
-  }
-  */
-  
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrIndex((currIndex + 1) % ImagesArray.length); 
-    }, 7500);
+    }, 5500);
 
     return () => clearInterval(intervalId);
   }, [currIndex]);
   
-  const currBackground = ImagesArray[setCurrIndex];
 
   return (
     <React.Fragment>
-      <div className="banner-wrapper fleex flow-col center filler-height-500 bg-blue">
-        <Image src={ImagesArray[currIndex].image}></Image>
+      <div className="banner-wrapper flex flow-col center filler-height-500 bg-blue">
+        {ImagesArray.map((image,index) => (
+            <Image 
+              key={index}
+              src={image.image}
+              className={index === currIndex ? "active" : "inactive"}
+              width={500}
+              height={500}/>
+        ))}
         <div className="ribbon-wrapper">
           <div className="ribbon">
             <svg viewBox="0 0 40 2"><path d="M0 0 Q 20 2.75, 40 0" /></svg>
