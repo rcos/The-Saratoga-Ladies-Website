@@ -17,6 +17,7 @@ const ImagesArray =
 const HeroSection = () => {
   const [currIndex,setCurrIndex] = useState(0);
 
+  /*
   const incrementIndex = () => {
     if (currIndex + 1 <= ImagesArray.length -1){
       setCurrIndex(currIndex + 1)
@@ -30,17 +31,22 @@ const HeroSection = () => {
     }
     else setCurrIndex(ImagesArray.length - 1)
   }
-
-  /*
-  useEffect(() => {
-    //  DO STUFF IN HERE 
-  }, [])
   */
+  
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrIndex((currIndex + 1) % ImagesArray.length); 
+    }, 7500);
+
+    return () => clearInterval(intervalId);
+  }, [currIndex]);
+  
+  const currBackground = ImagesArray[setCurrIndex];
 
   return (
     <React.Fragment>
       <div className="banner-wrapper fleex flow-col center filler-height-500 bg-blue">
-        <Image src={IMG0} />
+        <Image src={ImagesArray[currIndex].image}></Image>
         <div className="ribbon-wrapper">
           <div className="ribbon">
             <svg viewBox="0 0 40 2"><path d="M0 0 Q 20 2.75, 40 0" /></svg>
