@@ -1,7 +1,5 @@
-import * as React from "react"
-//import CircleType from 'circletype';
+import React, {useState, useEffect} from "react"
 
-import * as  RI from "react-icons/ri";
 import { GiStarsStack } from 'react-icons/gi'
 
 //import { HeaderRibbonText } from '../../../assets/text/HomeText'
@@ -10,77 +8,58 @@ import Image from 'next/image'
 import IMG0 from '@/images/Hero_First_New.jpg'
 import IMG1 from '@/images/ArticlePlaceholder.jpg'
 
-
-
-//import ReactCurvedText from "react-curved-text";
-
 const ImagesArray =
   [
     {image: IMG1}, 
     {image: IMG0},
   ];
 
-class HeroSection extends React.Component {
-    constructor() {
-      super();
-      this.state = {
-        //width: window.innerWidth/200,
-        currIndex: 0,
-        BannerSlides:  ImagesArray,
-      }
-      
-    }
+const HeroSection = () => {
+  const [currIndex,setCurrIndex] = useState(0);
 
-    componentDidMount(){
-      //console.log("Hello World")
-      //const circleType = new CircleType(document.getElementById('ribbonText'));
-      //circleType.radius(3250);
+  const incrementIndex = () => {
+    if (currIndex + 1 <= ImagesArray.length -1){
+      setCurrIndex(currIndex + 1)
     }
+    else setCurrIndex(0);
+  }
 
-    componentDidUpdate(){
-      //this.setState({width: window.innerWidth/200})
-      //console.log()
+  const decrementIndex = () => {
+    if (currIndex - 1 >= 0){
+      setCurrIndex(currIndex -1)
     }
+    else setCurrIndex(ImagesArray.length - 1)
+  }
 
-    incrementIndex = () => {
-      if(this.state.currIndex + 1 <= this.state.BannerSlides.length - 1){
-        this.setState({ currIndex: this.state.currIndex + 1 })
-      } else {  this.setState({ currIndex: 0 }) }
-    }
+  /*
+  useEffect(() => {
+    //  DO STUFF IN HERE 
+  }, [])
+  */
 
-    decrementIndex = () => {
-      console.log(this.state)
-      if(this.state.currIndex - 1 >= 0){
-        this.setState({ currIndex: this.state.currIndex - 1 })
-      } else {  this.setState({ currIndex: this.state.BannerSlides.length - 1 }) }
-    }
-
-    render() {
-      
-      return (
-        <React.Fragment>
-          <div className="banner-wrapper fleex flow-col center filler-height-500 bg-blue">
-            <Image src={this.state.BannerSlides[this.state.currIndex].image} />
-            <div className="ribbon-wrapper">
-              <div className="ribbon">
-                <svg viewBox="0 0 40 2"><path d="M0 0 Q 20 2.75, 40 0" /></svg>
-                <div className="ribbon-content">
-                  <GiStarsStack  fontSize="2.0em" />
-                  <div className="ribbon-text" id='ribbonText' >
-                    {/*HeaderRibbonText*/}
-                  </div>
-                  <GiStarsStack  fontSize="2.0em" />
-                </div>
-                <svg viewBox="0 0 40 2"><path d="M0 0 Q 20 2.75, 40 0" /></svg>
+  return (
+    <React.Fragment>
+      <div className="banner-wrapper fleex flow-col center filler-height-500 bg-blue">
+        <Image src={IMG0} />
+        <div className="ribbon-wrapper">
+          <div className="ribbon">
+            <svg viewBox="0 0 40 2"><path d="M0 0 Q 20 2.75, 40 0" /></svg>
+            <div className="ribbon-content">
+              <GiStarsStack  fontSize="2.0em" />
+              <div className="ribbon-text" id='ribbonText' >
+                {/*HeaderRibbonText*/}
               </div>
+              <GiStarsStack  fontSize="2.0em" />
             </div>
-            <svg viewBox="0 0 40 2" fill="#fff" style={{width: 'fit-content'}}><path d={`M0 0 Q 20 2.75, 40 0`} /></svg>
-            <div className="banner-filler"/>    
-          </div> 
-          <button onClick={this.incrementIndex}> Next </button>         
-        </React.Fragment>
-      )
-    }
+            <svg viewBox="0 0 40 2"><path d="M0 0 Q 20 2.75, 40 0" /></svg>
+          </div>
+        </div>
+        <svg viewBox="0 0 40 2" fill="#fff" style={{width: 'fit-content'}}><path d={`M0 0 Q 20 2.75, 40 0`} /></svg>
+        <div className="banner-filler"/>    
+      </div> 
+       
+    </React.Fragment>
+  )
 }
 
 
