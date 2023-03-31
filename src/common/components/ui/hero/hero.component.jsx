@@ -8,11 +8,13 @@ import { GiStarsStack } from 'react-icons/gi'
 import Image from 'next/image'
 import IMG0 from '@/images/Hero_First_New.jpg'
 import IMG1 from '@/images/ArticlePlaceholder.jpg'
+import IMG2 from '@/images/Saratoga_Ladies_Logo.png'
 
 const ImagesArray =
   [
-    {image: IMG1}, 
-    {image: IMG0},
+    {image: IMG0}, 
+    {image: IMG1},
+    {image: IMG2},
   ];
 
 const HeroSection = () => {
@@ -36,9 +38,21 @@ const HeroSection = () => {
               key={index}
               src={image.image}
               className={index === currIndex ? "active" : "inactive"}
-              width={500}
-              height={500}/>
+              width={"500vw"}
+              height={"500"}/>
         ))}
+
+        <div className="buttons-wrapper">
+          {ImagesArray.map((image, index) => (
+            <button
+              key={index}
+              className={index === currIndex ? "hero-buttons-active" : "hero-buttons-inactive"}
+              onClick={() => setCurrIndex(index)}
+            />
+          ))}
+        </div>
+
+
         <div className="ribbon-wrapper">
           <div className="ribbon">
             <svg viewBox="0 0 40 2"><path d="M0 0 Q 20 2.75, 40 0" /></svg>
@@ -52,10 +66,10 @@ const HeroSection = () => {
             <svg viewBox="0 0 40 2"><path d="M0 0 Q 20 2.75, 40 0" /></svg>
           </div>
         </div>
+
         <svg viewBox="0 0 40 2" fill="#fff" style={{width: 'fit-content'}}><path d={`M0 0 Q 20 2.75, 40 0`} /></svg>
         <div className="banner-filler"/>    
       </div> 
-       
     </React.Fragment>
   )
 }
