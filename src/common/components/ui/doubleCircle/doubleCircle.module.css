@@ -1,0 +1,75 @@
+/* :root {
+    --circle-boarder: 14px solid #333;
+} */
+
+.circle-image {
+    height: 100%;
+}
+
+#circleS {
+    display: flex;
+    width: 200px;
+    min-width: 200px;
+    height: 200px;
+    min-height: 200px;
+    border: 14px solid #333;
+    border-radius: 50%;
+}
+
+#circleM {
+    display: flex;
+    width: 300px;
+    min-width: 300px;
+    height: 300px;
+    min-height: 300px;
+    border: 14px solid #333;
+    border-radius: 50%;
+}
+
+#circleL {
+    display: flex;
+    width: 400px;
+    min-width: 400px;
+    height: 400px;
+    min-height: 400px;
+    border: 14px solid #333;
+    border-radius: 50%;
+}
+
+#ContentContainer {
+    height: auto;
+    width: 100%;
+    padding: 4em 4em;
+    gap: 50px;
+
+    display: flex;
+    flex-flow: row;
+}
+
+#CirclesContainer {
+    height: auto;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    flex-flow: row;
+}
+
+#InnerCircleContainer {
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: -20px;
+
+    display: flex;
+    flex-flow: row;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.flex-direction {
+    display: flex;
+    flex-direction: row;
+}
+

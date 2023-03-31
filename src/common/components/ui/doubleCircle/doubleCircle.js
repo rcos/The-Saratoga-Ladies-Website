@@ -1,0 +1,1 @@
+export { default as DoubleCircle } from "./doubleCircle.component.jsx"

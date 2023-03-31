@@ -97,30 +97,6 @@
     }
 } 
 
-
-
-
-/*
-    &:hover ${DropdownContent} {
-        display: block;
-    }
-
-    &:hover ${DropBtn} {
-        background-color: white;
-    }
-
-    @media screen and (max-width: 1000px) {
-        & {
-          display: none !important;
-        }
-    } 
-*/
-
-/*
----------------------------------------------------------------------
-*/
-
-
 .container1,
 .container2,
 .container3{
@@ -257,11 +233,112 @@
             margin-top: 50px;
         }
     }
+    */
+
+/* ==================== SANDWICH WRAPPER ====================  */
+
+.sandwich_icon_wrapper {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 10vw;
+    z-index: 100000;
+    position: absolute;
+    left: 89%;
+    width: auto;
+}
     
-    /* IPad Air as reference */
-    @media screen and (max-width: 1000px) {
-        .logo_wrapper   {
-            margin-top: 30px !important;
-            font-size: 40px !important;
-        }
+.sandwich_dropdown_wrapper {
+    position: fixed;
+    background-color: var(--saratoga-red);
+    display: none;
+    width: 100%;
+    height: 195%;
+    z-index: 1;
+}
+
+.sandwich_dropdown {
+    display: none;
+    background-color: white;
+    width: 100%;
+    margin-top: 0%;
+    height: auto;
+    position: absolute;
+    top: 52.85%;
+    z-index: inherit;
+    margin-top: calc(2*(0.5vw) + 1.5vw);
+}
+
+.sw_dropbtn {
+    background-color: white;
+    font-size: xx-large;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    color: blue;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.523);
+    margin: 0.5px;
+}
+
+.sw_item_container {
+    display: none;
+    position: relative;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.sw_item {
+    background-color: white;
+    font-size: xx-large;
+    text-align: center;
+    width: 100%;
+    align-self: center;
+    color: black;
+    cursor: pointer;
+    height: auto;
+}
+
+.sw_dropbtn:hover {
+    background-color: var(--saratoga-red);
+}
+
+.sw_dropbtn:hover .sw_item_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sw_item:hover{
+    background-color: #ddd;
+}
+
+/* IPad Air as reference */
+@media screen and (max-width: 1000px) {
+    .logo_wrapper   {
+        margin-top: 10px !important;
+        font-size: 40px !important;
     }
+
+    .logo_wrapper img {
+        margin: -1.2vw !important;
+    }
+
+    .sandwich_icon_wrapper {
+        display: block;
+    }
+
+    .sandwich_dropdown_wrapper {
+        display: block;
+    }
+
+    .sandwich_dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown-content {
+        position: absolute;
+    }
+    
+}
