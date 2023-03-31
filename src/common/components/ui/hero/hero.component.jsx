@@ -47,7 +47,7 @@ const HeroSection = () => {
               <div className="ribbon-text" id='ribbonText' >
                 {/*HeaderRibbonText*/}
               </div>
-              <GiStarsStack  fontSize="2.0em" />
+              <GiStarsStack  fontSize="2.0em" height="10"/>
             </div>
             <svg viewBox="0 0 40 2"><path d="M0 0 Q 20 2.75, 40 0" /></svg>
           </div>
