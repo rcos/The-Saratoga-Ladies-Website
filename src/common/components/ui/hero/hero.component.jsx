@@ -15,6 +15,8 @@ const ImagesArray =
     {image: IMG0}, 
     {image: IMG1},
     {image: IMG2},
+    {image: IMG1},
+    {image: IMG0},
   ];
 
 const HeroSection = () => {
@@ -39,10 +41,12 @@ const HeroSection = () => {
               src={image.image}
               className={index === currIndex ? "active" : "inactive"}
               width={"500vw"}
-              height={"500"}/>
+              height={"600"}/>
         ))}
 
+
         <div className="buttons-wrapper">
+        <button className="arrow-button"></button>
           {ImagesArray.map((image, index) => (
             <button
               key={index}

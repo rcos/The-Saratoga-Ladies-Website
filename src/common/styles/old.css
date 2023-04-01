@@ -375,7 +375,7 @@ footer {
     align-items: center;
     width: 100%;
     position: absolute;
-    top: 75.6666%;
+    top: 70.6666%;
     left: 50%;
     transform: translate(-50%, 50%);
     z-index: 1000;
@@ -387,18 +387,18 @@ footer {
     left: 50%;
     display: inline-block;
     padding: 10px 10px;
-    border: 2px solid black;
+    border: 1px solid var(--saratoga-black);
     border-radius: 100%;
     width: 1px;
     height: 1px;
-    background-color: black;
+    background-color: var(--saratoga-red);
     color: black;
 }
 
 .hero-buttons-inactive{
     display: inline-block;
     padding: 10px 10px;
-    border: 2px solid black;
+    border: 1px solid var(--saratoga-red);
     border-radius: 100%;
     width: 1px;
     height: 1px;
@@ -408,6 +408,26 @@ footer {
 
 }
 
+.arrow-button {
+    box-sizing: border-box;
+    height: 10px;
+    width: 10px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 1px 1px 0px;
+    background-color: red;
+
+    transform: rotate(135deg);
+    z-index: 1000;
+    transition: border 150ms ease-in-out;
+}
+  
+.arrow:hover {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+}
  /*---------------------------------------------------
  
  ------------------------------------------------------*/ 
