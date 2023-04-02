@@ -8,7 +8,7 @@ export default function Page({ page }) {
   return (
     <>
       <Header />
-      <div style={{ margin: "25%", textAlign: "center" }}>
+      <div style={{marginTop: "10%", marginBottom: "10%", marginLeft: "10%"}}>
         <h1>{page.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: page.content }} />
       </div>
