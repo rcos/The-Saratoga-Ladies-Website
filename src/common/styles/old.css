@@ -369,10 +369,79 @@ footer {
     border-radius: 50%;
 }
 
+.buttons-wrapper{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: calc(10% + 5vw);
+    gap: 20px;    
+    z-index: 1000; 
+}
 
 
 
+.hero-buttons-active{
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    padding: 10px 10px;
+    border: 1px solid var(--saratoga-black);
+    border-radius: 100%;
+    width: 1px;
+    height: 1px;
+    background-color: var(--saratoga-red);
+    color: black;
+}
 
+.hero-buttons-inactive{
+    display: inline-block;
+    padding: 10px 10px;
+    border: 1px solid var(--saratoga-red);
+    border-radius: 100%;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+
+}
+
+.left-arrow-button {
+    box-sizing: border-box;
+    height: 10px;
+    width: 10px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 2px 2px 0px;
+    background-color: transparent;
+
+    transform: rotate(135deg);
+    z-index: 1000;
+    transition: border 150ms ease-in-out;
+}
+
+.right-arrow-button {
+    box-sizing: border-box;
+    height: 10px;
+    width: 10px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 2px 2px 0px;
+    background-color: transparent;
+
+    transform: rotate(315deg);
+    z-index: 1000;
+    transition: border 150ms ease-in-out;
+}
+
+.left-arrow-button:hover {
+    transform: rotate(135deg) scale(1.2);
+}
+  
+.right-arrow-button:hover {
+    transform: rotate(315deg) scale(1.2);
+}
  /*---------------------------------------------------
  
  ------------------------------------------------------*/ 
