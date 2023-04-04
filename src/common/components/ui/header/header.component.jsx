@@ -5,6 +5,7 @@ import { CgMenu } from 'react-icons/cg';
 import { AiOutlineClose } from 'react-icons/ai'
 
 import Image from 'next/image'
+import Link from 'next/link';
 import LOGO from "@/images/Saratoga_Ladies_Logo.png";
 
 import { HeaderData } from "@/__Constants"
@@ -98,7 +99,9 @@ function HeaderContent(props){
                 <MappedDropDown mrgnTop="2.5vw" hero="What We Do" dropPad="45px" index="1"/>
 
                 <div className={styles.logo_wrapper}>
-                    <Image src={LOGO} alt="Saratoga Ladies Logo" />
+                    <Link href="/">
+                        <Image src={LOGO} alt="Saratoga Ladies Logo" />
+                    </Link>
                 </div>
 
                 <MappedDropDown mrgnTop="2.5vw" hero="Learn More" dropPad="45px" index="2"/>
