@@ -371,16 +371,15 @@ footer {
 
 .buttons-wrapper{
     display: flex;
-    gap: 20px;
-    align-items: center;
-    width: 100%;
     position: absolute;
-    top: 70.6666%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    z-index: 1000;
     justify-content: center;
+    align-items: center;
+    bottom: calc(10% + 5vw);
+    gap: 20px;    
+    z-index: 1000; 
 }
+
+
 
 .hero-buttons-active{
     top: 50%;
@@ -408,25 +407,40 @@ footer {
 
 }
 
-.arrow-button {
+.left-arrow-button {
     box-sizing: border-box;
     height: 10px;
     width: 10px;
     border-style: solid;
     border-color: white;
-    border-width: 0px 1px 1px 0px;
-    background-color: red;
+    border-width: 0px 2px 2px 0px;
+    background-color: transparent;
 
     transform: rotate(135deg);
     z-index: 1000;
     transition: border 150ms ease-in-out;
 }
+
+.right-arrow-button {
+    box-sizing: border-box;
+    height: 10px;
+    width: 10px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 2px 2px 0px;
+    background-color: transparent;
+
+    transform: rotate(315deg);
+    z-index: 1000;
+    transition: border 150ms ease-in-out;
+}
+
+.left-arrow-button:hover {
+    transform: rotate(135deg) scale(1.2);
+}
   
-.arrow:hover {
-    border-bottom-width: 4px;
-    border-left-width: 4px;
-    border-right-width: 4px;
-    border-top-width: 4px;
+.right-arrow-button:hover {
+    transform: rotate(315deg) scale(1.2);
 }
  /*---------------------------------------------------
  

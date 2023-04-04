@@ -26,11 +26,28 @@ const HeroSection = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrIndex((currIndex + 1) % ImagesArray.length); 
-    }, 5500);
+    }, 6000);
 
     return () => clearInterval(intervalId);
   }, [currIndex]);
   
+  const handleLeftArrowClick = () => {
+    if (currIndex === 0) {
+      setCurrIndex(ImagesArray.length - 1);
+    } else {
+      setCurrIndex(currIndex - 1);
+    }
+  };
+
+  const handleRightArrowClick = () => {
+    if (currIndex === ImagesArray.length - 1){
+      setCurrIndex(0)
+    }
+    else{
+      setCurrIndex(currIndex + 1)
+    }
+    setCurrIndex((currIndex + 1) % ImagesArray.length); 
+  };
 
   return (
     <React.Fragment>
@@ -46,14 +63,18 @@ const HeroSection = () => {
 
 
         <div className="buttons-wrapper">
-        <button className="arrow-button"></button>
-          {ImagesArray.map((image, index) => (
+        <button className="left-arrow-button"
+                onClick={handleLeftArrowClick}></button>
+          {ImagesArray.map((image,index) => (
             <button
               key={index}
               className={index === currIndex ? "hero-buttons-active" : "hero-buttons-inactive"}
               onClick={() => setCurrIndex(index)}
             />
           ))}
+          <button className="right-arrow-button"
+                  onClick={handleRightArrowClick}></button>
+      
         </div>
 
 
