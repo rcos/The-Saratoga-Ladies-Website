@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useRef, useState, useEffect} from "react"
 
 
 import { GiStarsStack } from 'react-icons/gi'
@@ -48,6 +48,36 @@ const HeroSection = () => {
     }
     setCurrIndex((currIndex + 1) % ImagesArray.length); 
   };
+  
+  const buttonsRef = useRef([]);
+
+  useEffect(() => {
+    const buttons = buttonsRef.current;
+    const buttonCount = buttons.length; 
+    const buttonRadius = 70;
+
+    buttons.forEach((button, i) => {
+      const center = buttonCount / 2;
+      const distanceFromCenter = Math.abs(i - center);
+      const angle = ((i - center + .45) * (Math.PI - 1.6)) / (buttonCount + 1);
+      const x = buttonRadius * Math.sin(angle) * (.5 + 0.2 * distanceFromCenter);
+      const y = buttonRadius * Math.cos(angle) * -1;
+      button.style.transform = `translate(${x }px, ${y + 65}px)`;
+    })
+  })
+  
+  /*
+  const buttons = document.querySelectorAll('.hero-buttons-active, .hero-buttons-inactive');
+  const buttonCount = buttons.length;
+  const buttonRadius = 75; 
+  
+  buttons.forEach((button,i) => {
+    const angle = ((i - 2) * (Math.PI - 1)) / (buttonCount + 1);
+    const x = buttonRadius * Math.sin(angle);
+    const y = buttonRadius * Math.cos(angle) * -1;
+    button.style.transform = `translate(${x}px, ${y + 60}px)`
+  });
+  */
 
   return (
     <React.Fragment>
@@ -68,8 +98,10 @@ const HeroSection = () => {
           {ImagesArray.map((image,index) => (
             <button
               key={index}
+              ref={(el) => (buttonsRef.current[index] = el)} 
               className={index === currIndex ? "hero-buttons-active" : "hero-buttons-inactive"}
               onClick={() => setCurrIndex(index)}
+
             />
           ))}
           <button className="right-arrow-button"

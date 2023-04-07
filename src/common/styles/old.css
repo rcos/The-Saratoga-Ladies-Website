@@ -374,10 +374,17 @@ footer {
     position: absolute;
     justify-content: center;
     align-items: center;
-    bottom: calc(10% + 5vw);
+
+    bottom: calc(10% + 6vw);
     gap: 20px;    
     z-index: 1000; 
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 40 2"><path d="M0 0 Q 20 2.75, 40 0" /></svg>');
+    background-repeat: no-repeat; 
+    background-position: center top; 
+    background-size: contain;
+    padding-top: 2rem;
 }
+
 
 
 
@@ -413,12 +420,15 @@ footer {
     width: 10px;
     border-style: solid;
     border-color: white;
-    border-width: 0px 2px 2px 0px;
+    border-width: 0px 0px 2px 2px;
     background-color: transparent;
 
-    transform: rotate(135deg);
     z-index: 1000;
     transition: border 150ms ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 160px);
+    transform: translateY(25px);
 }
 
 .right-arrow-button {
@@ -430,18 +440,14 @@ footer {
     border-width: 0px 2px 2px 0px;
     background-color: transparent;
 
-    transform: rotate(315deg);
     z-index: 1000;
     transition: border 150ms ease-in-out;
+    position: absolute;
+    right: calc(50% - 155px);
+    top: 50%;
+    transform: translateY(25px);
 }
 
-.left-arrow-button:hover {
-    transform: rotate(135deg) scale(1.2);
-}
-  
-.right-arrow-button:hover {
-    transform: rotate(315deg) scale(1.2);
-}
  /*---------------------------------------------------
  
  ------------------------------------------------------*/ 
