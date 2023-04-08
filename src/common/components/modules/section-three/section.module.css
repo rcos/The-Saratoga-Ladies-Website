@@ -1,29 +1,21 @@
 #ContentContainer {
     height: auto;
-    width: 90%;
+    width: 100%;
     padding: 4em 4em;
     gap: 50px;
     
     display: flex;
-    flex-flow: row;
+    flex-wrap: wrap;
 }
 
 #SectionOneThirdContainer {
-    height: auto;
-    width: 33.3333%;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-basis: 65%;
+    flex: 1;
 }
 
 #SectionTwoThirdContainer {
-    height: auto;
-    width: 66.6667%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 1;
+    flex-basis: 35%;
 }
 
 #SectionWrapper {
