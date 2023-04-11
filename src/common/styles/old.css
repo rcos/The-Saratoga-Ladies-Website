@@ -393,23 +393,22 @@ footer {
     left: 50%;
     display: inline-block;
     padding: 10px 10px;
-    border: 1px solid var(--saratoga-black);
+    border: 1px solid var(--saratoga-blue);
     border-radius: 100%;
     width: 1px;
     height: 1px;
-    background-color: var(--saratoga-red);
-    color: black;
+    background-color: #d62d0e;
 }
 
 .hero-buttons-inactive{
     display: inline-block;
     padding: 10px 10px;
-    border: 1px solid var(--saratoga-red);
+    border: 1px solid #d62d0e;
     border-radius: 100%;
     width: 1px;
     height: 1px;
     background-color: white;
-    color: black;
+
     font-weight: bold;
 
 }
@@ -426,9 +425,9 @@ footer {
     z-index: 1000;
     transition: border 150ms ease-in-out;
     position: absolute;
-    top: 50%;
+    top: 90%;
     left: calc(50% - 160px);
-    transform: translateY(25px);
+    transform: rotate(25deg)
 }
 
 .right-arrow-button {
@@ -443,9 +442,9 @@ footer {
     z-index: 1000;
     transition: border 150ms ease-in-out;
     position: absolute;
-    right: calc(50% - 155px);
-    top: 50%;
-    transform: translateY(25px);
+    right: calc(50% - 157px);
+    top: 90%;
+    transform: rotate(-25deg)
 }
 
  /*---------------------------------------------------
@@ -461,7 +460,7 @@ footer {
 }
 
 .ribbon {
-    font-size: 20px !important;
+    font-size: 20.75px !important;
     /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
    
     width: 60%;
@@ -597,13 +596,13 @@ footer {
 }
 
 .ribbon svg:nth-of-type(1) {
-    bottom: -0.5px;
+    bottom: -1px;
     left: 25px;
     width: calc(100% - 50px);
 }
 
 .ribbon svg:nth-of-type(2) {
-    bottom: calc(100% - 0.5px);
+    bottom: calc(100% - 1px);
     left: 4.5px;
     width: calc(100% - 9px);
    

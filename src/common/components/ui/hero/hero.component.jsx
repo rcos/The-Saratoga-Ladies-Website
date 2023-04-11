@@ -59,10 +59,10 @@ const HeroSection = () => {
     buttons.forEach((button, i) => {
       const center = buttonCount / 2;
       const distanceFromCenter = Math.abs(i - center);
-      const angle = ((i - center + .45) * (Math.PI - 1.6)) / (buttonCount + 1);
-      const x = buttonRadius * Math.sin(angle) * (.5 + 0.2 * distanceFromCenter);
+      const angle = ((i - center + .5) * (Math.PI - 1.6)) / (buttonCount + 1);
+      const x = buttonRadius * Math.sin(angle) * (.7 + 0.1 * distanceFromCenter);
       const y = buttonRadius * Math.cos(angle) * -1;
-      button.style.transform = `translate(${x }px, ${y + 65}px)`;
+      button.style.transform = `translate(${x}px, ${y + 63}px)`;
     })
   })
   
@@ -124,7 +124,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <svg viewBox="0 0 40 2" fill="#fff" style={{width: 'fit-content'}}><path d={`M0 0 Q 20 2.75, 40 0`} /></svg>
+        <svg viewBox="0 0 40 2" fill="#fff" style={{width: '100%'}}><path d={`M0 0 Q 20 2.75, 40 0`} /></svg>
         <div className="banner-filler"/>    
       </div> 
     </React.Fragment>
