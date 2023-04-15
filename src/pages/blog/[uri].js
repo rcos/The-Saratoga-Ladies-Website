@@ -22,7 +22,7 @@ export default function SlugPage({ post }) {
             <Header/>
             <div className={styles.fullWidthImage}> 
                 <Image src={IMG0} className={styles.bannerImage}></Image>
-                <h className={styles.bannerTitle}>Title</h>
+                <h className={styles.bannerTitle}><div dangerouslySetInnerHTML={{__html: post.title}}></div></h>
             </div>
            
             <div dangerouslySetInnerHTML={{__html: post.content}} className={styles.websiteContent}></div>
@@ -41,6 +41,7 @@ export async function getStaticProps({ params }){
     const GETPOSTBYURI = gql`
         query GetPostByURI($id: ID!) {
             post(id: $id, idType: URI) {
+            title
             content
             content
             date
