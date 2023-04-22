@@ -59,7 +59,7 @@ const HeroSection = () => {
     buttons.forEach((button, i) => {
       const center = buttonCount / 2;
       const distanceFromCenter = Math.abs(i - center);
-      const angle = ((i - center + .5) * (Math.PI - 1.6)) / (buttonCount + 1);
+      const angle = ((i - center + .555) * (Math.PI - 1.8)) / (buttonCount + 1);
       const x = buttonRadius * Math.sin(angle) * (.7 + 0.1 * distanceFromCenter);
       const y = buttonRadius * Math.cos(angle) * -1;
       button.style.transform = `translate(${x}px, ${y + 63}px)`;

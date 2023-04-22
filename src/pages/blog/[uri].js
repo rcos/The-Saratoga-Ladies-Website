@@ -14,8 +14,12 @@ export default function SlugPage({ post }) {
     if (router.isFallback){
         return <div>Loading...</div>
     }
+    const postDate = new Date(post.date);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = postDate.toLocaleDateString('en-US', options);
 
     return (
+        
         <main className={styles.main}>
         <div className="page-wrapper">
         <div>
@@ -24,8 +28,10 @@ export default function SlugPage({ post }) {
                 <Image src={IMG0} className={styles.bannerImage}></Image>
                 <h className={styles.bannerTitle}><div dangerouslySetInnerHTML={{__html: post.title}}></div></h>
             </div>
-           
+            <div dangerouslySetInnerHTML={{__html: post.author}} className={styles.blogDate}></div>
+            <div className={styles.blogDate}>{formattedDate} </div>
             <div dangerouslySetInnerHTML={{__html: post.content}} className={styles.websiteContent}></div>
+
             <Footer />
         </div>
         </div>
@@ -42,9 +48,9 @@ export async function getStaticProps({ params }){
         query GetPostByURI($id: ID!) {
             post(id: $id, idType: URI) {
             title
-            content
-            content
             date
+            content
+            content
             uri
             author {
                 node {
