@@ -76,7 +76,7 @@
     color: #000;
     line-height: 1.0;
     font-size: 18px;
-
+    width: -moz-fit-content;
     width: fit-content;
     margin: 0px 0px 25px 0px;
     padding: 0px 0px 0px 0px;
