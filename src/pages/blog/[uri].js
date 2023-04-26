@@ -7,6 +7,7 @@ import { Footer } from "../../common/components/ui/footer/footer.js"
 import Image from 'next/image'
 import IMG0 from '@/images/Hero_First_New.jpg'
 import {useRouter} from 'next/router'
+import { useQuery} from '@apollo/client'
 
 export default function SlugPage({ post }) {
     const router = useRouter();
@@ -18,20 +19,24 @@ export default function SlugPage({ post }) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate = postDate.toLocaleDateString('en-US', options);
 
+
+
     return (
         
         <main className={styles.main}>
         <div className="page-wrapper">
         <div>
             <Header/>
-            <div className={styles.fullWidthImage}> 
-                <Image src={IMG0} className={styles.bannerImage}></Image>
-                <h className={styles.bannerTitle}><div dangerouslySetInnerHTML={{__html: post.title}}></div></h>
-            </div>
-            <div dangerouslySetInnerHTML={{__html: post.author}} className={styles.blogDate}></div>
-            <div className={styles.blogDate}>{formattedDate} </div>
-            <div dangerouslySetInnerHTML={{__html: post.content}} className={styles.websiteContent}></div>
+            <div className={styles.blogContainer}>
+                <div className={styles.fullWidthImage}> 
+                    <Image src={IMG0} className={styles.bannerImage}></Image>
+                    <h className={styles.bannerTitle}>{post.title}</h>
+                </div>
 
+                <div className={styles.blogName}> Written by: {post.author.node.firstName} {post.author.node.lastName} </div>
+                <div className={styles.blogDate}> Published: {formattedDate} </div>
+                <div dangerouslySetInnerHTML={{__html: post.content}} className={styles.blogContent}></div>
+            </div>
             <Footer />
         </div>
         </div>
@@ -47,27 +52,23 @@ export async function getStaticProps({ params }){
     const GETPOSTBYURI = gql`
         query GetPostByURI($id: ID!) {
             post(id: $id, idType: URI) {
-            title
-            date
-            content
-            content
-            uri
-            author {
-                node {
-                firstName
-                lastName
+                title
+                date
+                content
+                uri
+                author {
+                    node {
+                    firstName
+                    lastName
+                    }
                 }
-            }
             }
         }
     `
     const response = await client.query({
         query: GETPOSTBYURI,
-        variables: {
-            id: params.uri
-        }
-        
-    })
+        variables: { id: params.uri }    
+    });
 
 
     const post = response?.data?.post
@@ -82,7 +83,7 @@ export async function getStaticProps({ params }){
         props: {
             post
         }
-    }
+    };
     
 }
 
@@ -91,5 +92,5 @@ export async function getStaticPaths(){
     return {
         paths,
         fallback: 'blocking'
-    }
+    };
 }
