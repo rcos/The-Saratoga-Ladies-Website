@@ -2,8 +2,8 @@ import styles from './doubleCircle.module.css'
 import Image from "next/image"
 import React, { useState } from "react"
 
-import outerCircleImage from "@/images/IMG8.JPG"
-import innerCircleImage from "@/images/IMG15.JPG"
+//import outerCircleImage from "@/images/IMG8.JPG"
+//import innerCircleImage from "@/images/IMG15.JPG"
 
 // Double Circles Component
 function DoubleCircles(props) {
@@ -13,8 +13,8 @@ function DoubleCircles(props) {
     const [circleOuterSize, setCircleOuterSize] = useState("l");
     const [circleInnerSize, setCircleInnerSize] = useState("m");
 
-    return (
-        <div id={styles.ContentContainer}>
+    return ( <>
+        {/*<div id={styles.ContentContainer}>
             <div id={styles.CirclesContainer}>
                 <div id={styles.circleL} className="overflow-hidden">
                     <Image src={outerCircleImage} className="circle-image" alt="outer circle"/>
@@ -26,7 +26,8 @@ function DoubleCircles(props) {
                     </div>
                 </div>
             </div>
-        </div>
+</div>}*/}
+</>
     );
 }
 export default DoubleCircles
