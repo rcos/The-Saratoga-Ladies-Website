@@ -1,4 +1,4 @@
-
+import Link from 'next/link';
 import styles from './header.module.css'
 import React, { useState } from "react"
 import { CgMenu } from 'react-icons/cg';
@@ -8,7 +8,6 @@ import Image from 'next/image'
 import LOGO from "@/images/Saratoga_Ladies_Logo.png";
 
 import { HeaderData } from "@/__Constants"
-
 
 function MappedDropDown(props){
     let _Arrow = (HeaderData[props.index].length > 0 ? <>&#9660;</> : <></>)
@@ -97,10 +96,11 @@ function HeaderContent(props){
                 <MappedDropDown mrgnTop="0.5vw" hero="Our Mission" dropPad="35px" index="0"/>
                 <MappedDropDown mrgnTop="2.5vw" hero="What We Do" dropPad="45px" index="1"/>
 
+
                 <div className={styles.logo_wrapper}>
                     <Image src={LOGO} alt="Saratoga Ladies Logo" />
                 </div>
-
+                
                 <MappedDropDown mrgnTop="2.5vw" hero="Learn More" dropPad="45px" index="2"/>
                 <MappedDropDown mrgnTop="0.5vw" hero="Contact Us" dropPad="35px" index="3"/>
 
