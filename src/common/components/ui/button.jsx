@@ -1,6 +1,7 @@
 import * as React from "react"
 import styles from './ui.module.css'
 import PropTypes from 'prop-types'
+import toast, { Toaster } from 'react-hot-toast';
 
 const Button = (props) => {
 
@@ -17,6 +18,8 @@ const Button = (props) => {
                         "inherit",
         padding:        props.shape === "circle" ? "1rem" : "inherit",
     }
+
+    const notify = () => toast('This functionaility is coming soon!');
 
     switch(props.type) {
         case "email":
@@ -42,7 +45,7 @@ const Button = (props) => {
         default:
             return (
                 <div className={styles['saratoga-button-wrapper'] }>
-                    <button className={styles['saratoga-button-wrapper']}>
+                    <button className={styles['saratoga-button-wrapper']} onClick={() => {notify()}}>
                         { props.text ? props.text : <></> }
                         { props.icon ? <props.icon size={"1.7rem"} /> : <></> } 
                     </button>

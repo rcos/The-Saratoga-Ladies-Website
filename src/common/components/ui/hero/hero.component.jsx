@@ -60,7 +60,7 @@ const HeroSection = () => {
       const center = buttonCount / 2;
       const distanceFromCenter = Math.abs(i - center);
       const angle = ((i - center + .555) * (Math.PI - 1.8)) / (buttonCount + 1);
-      const x = buttonRadius * Math.sin(angle) * (.7 + 0.1 * distanceFromCenter);
+      const x = buttonRadius * Math.sin(angle) * (.7 + 0.05 * distanceFromCenter);
       const y = buttonRadius * Math.cos(angle) * -1;
       button.style.transform = `translate(${x}px, ${y + 63}px)`;
     })
@@ -88,24 +88,21 @@ const HeroSection = () => {
               src={image.image}
               className={index === currIndex ? "active" : "inactive"}
               width={"500vw"}
-              height={"600"}/>
+              height={"600"}
+              alt=""
+            />
         ))}
 
 
         <div className="buttons-wrapper">
-        <button className="left-arrow-button"
-                onClick={handleLeftArrowClick}></button>
+        {/*<button className="left-arrow-button"
+                onClick={handleLeftArrowClick}></button>*/}
           {ImagesArray.map((image,index) => (
-            <button
-              key={index}
-              ref={(el) => (buttonsRef.current[index] = el)} 
-              className={index === currIndex ? "hero-buttons-active" : "hero-buttons-inactive"}
-              onClick={() => setCurrIndex(index)}
-
-            />
+            <button key={index} ref={(el) => (buttonsRef.current[index] = el)} onClick={() => setCurrIndex(index)}
+              className={index === currIndex ? "hero-buttons-active" : "hero-buttons-inactive"} />
           ))}
-          <button className="right-arrow-button"
-                  onClick={handleRightArrowClick}></button>
+          {/*<button className="right-arrow-button"
+                  onClick={handleRightArrowClick}></button>*/}
       
         </div>
 

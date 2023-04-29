@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styles from './header.module.css'
 import React, { useState } from "react"
 import { CgMenu } from 'react-icons/cg';
@@ -9,12 +8,15 @@ import Link from 'next/link';
 import LOGO from "@/images/Saratoga_Ladies_Logo.png";
 
 import { HeaderData } from "@/__Constants"
+import toast, { Toaster } from 'react-hot-toast';
+
+const notify = () => toast('This page is coming soon!');
 
 function MappedDropDown(props){
     let _Arrow = (HeaderData[props.index].length > 0 ? <>&#9660;</> : <></>)
     const [isShown, setIsShown] = useState(false);
-    
-    return (<div className={styles.dropdown} style={{marginTop: props.mrgnTop}} onClick={() => {alert("Functionality coming soon :)")}}>
+
+    return (<div className={styles.dropdown} style={{marginTop: props.mrgnTop}} onClick={() => {notify()}}>
                 <div className={styles.dropdown_btn} 
                      onMouseEnter={() => setIsShown(true)} 
                      onMouseLeave={() => setIsShown(false)}>
@@ -24,7 +26,7 @@ function MappedDropDown(props){
                     <div className={styles.dropdown_content} style={{paddingTop: props.dropPad }} 
                          onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
                         { HeaderData[props.index].map((item) => {
-                            return   ( <div key={item.title} className={styles.item} onClick={() => {alert("Functionality coming soon :)")}}>{item.title}</div> )
+                            return   ( <div key={item.title} className={styles.item} >{item.title}</div> )
                         })} 
                     </div>  : <></> 
                 }
@@ -105,7 +107,7 @@ function HeaderContent(props){
                 </div>
                 
                 <MappedDropDown mrgnTop="2.5vw" hero="Learn More" dropPad="45px" index="2"/>
-                <MappedDropDown mrgnTop="0.5vw" hero="Contact Us" dropPad="35px" index="3"/>
+                <MappedDropDown mrgnTop="0.5vw" hero="Donate Today" dropPad="35px" index="3"/>
 
                 <svg viewBox="0 0 40 2" fill="#fff"><path d={`M0 0 Q 20 2.75, 40 0`} /></svg>
             </div>

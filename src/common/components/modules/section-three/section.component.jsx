@@ -8,7 +8,7 @@ import MultiHeader from "../../ui/multi-header.jsx"
 import Button from "../../ui/button.jsx"
 import { DoubleCircle } from "../../ui/doubleCircle/doubleCircle"
 
-import { SectionThreeHeader, SectionThreeSubHeader, SectionThreeParagraph1, SectionThreeParagraph2 } from '@/text/homepage'
+import { SectionThreeHeader, SectionThreeSubHeader, SectionThreeParagraph1, SectionThreeParagraph2, SectionThreeParagraph3, AddressLines } from '@/text/homepage'
 
 const SectionThree = (props) => {
     return (
@@ -19,10 +19,15 @@ const SectionThree = (props) => {
                         {SectionThreeHeader}
                     </div>
                     <h2> {SectionThreeSubHeader} </h2>
-                    <p> {SectionThreeParagraph1} </p>
+                    <p style={{ marginBottom: '10px'}} > {SectionThreeParagraph1} </p>
+                    {AddressLines.map((text, index) => {
+                       return <p key={`address-line-${index}`} style={{textAlign: 'center', margin: '0', padding: '0'}}> {text} </p>
+                    })}
+                    
+                    <p> {SectionThreeParagraph3} </p>
                 </div>
             </div>
-            <div id={styles.SectionOneThirdContainer}>
+            <div id={styles.SectionOneThirdContainer} style={{marginLeft: '20px', display: 'flex', justifyContent: 'center'}}>
                 <DoubleCircle circle1-size={"m"} circle2-size={"l"}/>
             </div>
         </div>

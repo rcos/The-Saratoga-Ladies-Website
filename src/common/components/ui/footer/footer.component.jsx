@@ -5,9 +5,14 @@ import {FooterSectionOneHeader, FooterSectionOneParagraph, FooterSectionTwoHeade
   } from '@/text/homepage'
   import Button from '../button.jsx'
 
+import toast, { Toaster } from 'react-hot-toast';
+
 
 
 export default function Footer(props) { 
+
+  const notify = () => toast('This social media is coming soon!');
+
     return ( 
         <footer>
             <div className={styles['footer-top-section']}>
@@ -16,10 +21,10 @@ export default function Footer(props) {
                     <h4>{ FooterSectionOneHeader }</h4>
                     <p>{ FooterSectionOneParagraph }</p>
                     <div className={styles['footer-section-icon-wrapper']}>
-                        <div className={styles['footer-icon']}><FaLinkedinIn size={'1.25em'} color={'#fff'}/></div>
-                        <div className={styles['footer-icon']}><FaFacebookF  size={'1.25em'} color={'#fff'}/></div>
-                        <div className={styles['footer-icon']}><FaInstagram  size={'1.25em'} color={'#fff'}/></div>
-                        <div className={styles['footer-icon']}><FaYoutube  size={'1.25em'} color={'#fff'}/></div>
+                        <div className={styles['footer-icon']} onClick={() => {notify()}} ><FaLinkedinIn size={'1.25em'} color={'#fff'}/></div>
+                        <div className={styles['footer-icon']} onClick={() => {notify()}} ><FaFacebookF  size={'1.25em'} color={'#fff'}/></div>
+                        <div className={styles['footer-icon']} onClick={() => {notify()}} ><FaInstagram  size={'1.25em'} color={'#fff'}/></div>
+                        <div className={styles['footer-icon']} onClick={() => {notify()}} ><FaYoutube  size={'1.25em'} color={'#fff'}/></div>
                     </div>
                 </div>
                 <div className={styles['second-column'] + ' ' + styles['footer-content-section'] }> 

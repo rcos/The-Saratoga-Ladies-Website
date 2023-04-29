@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images : {
+    domains : ['http://slw.local/graphql', 'localhost' ] // <== Domain name
+  },
   reactStrictMode: true,
 }
 

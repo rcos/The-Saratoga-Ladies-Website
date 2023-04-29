@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import { getAllPosts } from 'lib/test-data.js'
 import styles from '@/styles/Home.module.css'
 import { client } from "/lib/apollo"
@@ -13,7 +12,6 @@ import { SectionOne } from "../common/components/modules/section-one/index.js"
 import { SectionTwo } from "../common/components/modules/section-two/index.js"
 import { SectionThree } from "../common/components/modules/section-three/index.js"
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home(error) {
   return (
@@ -40,7 +38,7 @@ export default function Home(error) {
 }
 
 export async function getStaticProps() {
-  const GET_POSTS = gql`
+  /*const GET_POSTS = gql`
       query GetAllPosts {
         posts {
           nodes {
@@ -56,10 +54,10 @@ export async function getStaticProps() {
   const response = await client.query({
       query: GET_POSTS
     })
-  const posts = response?.data?.posts?.nodes
+  const posts = response?.data?.posts?.nodes*/
     return {
       props: {
-        posts
+        /*posts*/
     }
   }
 }

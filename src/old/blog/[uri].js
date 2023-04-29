@@ -29,7 +29,7 @@ export default function SlugPage({ post }) {
             <Header/>
             <div className={styles.blogContainer}>
                 <div className={styles.fullWidthImage}> 
-                    <Image src={IMG0} className={styles.bannerImage}></Image>
+                    <Image src={IMG0} className={styles.bannerImage} alt="" ></Image>
                     <h className={styles.bannerTitle}>{post.title}</h>
                 </div>
 
