@@ -1,5 +1,5 @@
 import React, {useRef, useState, useEffect} from "react"
-
+import ReactCurvedText from "react-curved-text";
 
 import { GiStarsStack } from 'react-icons/gi'
 
@@ -114,6 +114,10 @@ const HeroSection = () => {
               <GiStarsStack  fontSize="2.0em" />
               <div className="ribbon-text" id='ribbonText' >
                 {/*HeaderRibbonText*/}
+                {/*       We are committed to give back a little <br/>to those who have given so much.*/ }
+                <ReactCurvedText width={600} height={80} cx={300} cy={150} rx={600} ry={100}
+                  startOffset={440} reversed={true} text="At Saratoga National Cemetary" textProps={{ style: { fontSize: 24, color: 'white' } }}
+                  textPathProps={{ style: { fontSize: 24, fill: 'white' } }} tspanProps={null} ellipseProps={null} svgProps={null} />
               </div>
               <GiStarsStack  fontSize="2.0em" height="10"/>
             </div>

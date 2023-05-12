@@ -211,7 +211,8 @@
     position: relative;
     z-index: 99999999;
     font-family: 'Great Vibes', cursive !important;
-    margin-top: 4.5vw;
+    /*margin-top: 4.5vw;*/
+    margin-top: 2.25vw;
     margin-left: 0px;
     font-size: 3.00vw !important;
     color: var(--saratoga-red);

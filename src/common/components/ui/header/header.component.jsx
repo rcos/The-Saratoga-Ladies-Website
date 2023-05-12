@@ -6,6 +6,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 import Image from 'next/image'
 import Link from 'next/link';
 import LOGO from "@/images/Saratoga_Ladies_Logo.png";
+import LogoRibbon from "@/images/ribbon.jpg";
 
 import { HeaderData } from "@/__Constants"
 import toast, { Toaster } from 'react-hot-toast';
@@ -101,9 +102,7 @@ function HeaderContent(props){
 
 
                 <div className={styles.logo_wrapper}>
-                    <Link href="/">
-                        <Image src={LOGO} alt="Saratoga Ladies Logo" />
-                    </Link>
+                    <div>Saratoga Ladies</div>
                 </div>
                 
                 <MappedDropDown mrgnTop="2.5vw" hero="Learn More" dropPad="45px" index="2"/>
